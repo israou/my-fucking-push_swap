@@ -3,7 +3,6 @@
 int		check_empty(const char *str)
 {
 	int		i;
-	// int		empty;
 
 	i = 0;
 	if (str[0] == '\0') // empty
@@ -44,7 +43,7 @@ int	is_int(char *str)
 		i++;
 	if (num > INT_MAX || num < INT_MIN)
 		return (1);
-	if (ft_strlen(str + i) > ft_strlen("+2147483647"))
+	if (ft_strlen(str + i) > ft_strlen("+2147483647"))//verifier si la longueur de a chaine est plus longue que la representation int_max
 		return (1);
 	return (0);
 }
@@ -77,15 +76,34 @@ int main(int ac, char **av)
 		ft_lstadd_back(&head, node1);
 		i++;
 	}
-	// printf("before content head == %d\n", head->content);
-	// printf("addr == %p\n", &head);
-	// 			if (duplicate(head) == 1)
-	// 					ft_putstr_fd("Error\n", 2);
-	// printf("after content head == %d\n", head->content);
 	t_robio *tmp = head;
 	while (tmp)
 	{
 		printf("num == %d\n", tmp->content);
+		tmp = tmp->next;
+	}
+	printf("\nswap\n");
+	ft_swap(&head);
+	tmp = head;
+	while (tmp)
+	{
+		printf("%d\n", tmp->content);
+		tmp = tmp->next;
+	}
+	printf("\nrotate\n");
+	ft_rotate(&head);
+	tmp = head;
+	while (tmp)
+	{
+		printf("%d\n", tmp->content);
+		tmp = tmp->next;
+	}
+	printf("\nreverserotate\n");
+	ft_reverse_rotate(&head);
+	tmp = head;
+	while (tmp)
+	{
+		printf("%d\n", tmp->content);
 		tmp = tmp->next;
 	}
 	return 0;

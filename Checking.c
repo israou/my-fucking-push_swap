@@ -6,28 +6,11 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 23:20:45 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/12 23:35:30 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/13 19:05:36 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
-
-// int		check_empty(const char *str)
-// {
-// 	int		i;
-// 	// int		empty;
-
-// 	i = 0;
-// 	if (str[0] == '\0')//"" empty
-// 		exit(write(1, "Error\n", 6));
-// 	while(str[i] == ' ')
-// 	{
-// 		i++;//bzaf dial les espaces
-// 	}
-// 	if (str[i] == '\0')
-// 		exit(write(1, "Error\n", 6));
-// 	return (0);
-// }
+#include "push_swap.h"
 
 long	ft_atoi(const char *str)
 {

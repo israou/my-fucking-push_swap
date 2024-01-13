@@ -6,7 +6,7 @@
 #    By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 16:10:34 by ichaabi           #+#    #+#              #
-#    Updated: 2024/01/13 01:17:04 by ichaabi          ###   ########.fr        #
+#    Updated: 2024/01/13 19:53:33 by ichaabi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRC = push_swap.c begin1.c ft_split.c ft_strjoin.c Checking.c ft_strlen.c duplicate.c
+SRC = push_swap.c begin1.c ft_split.c ft_strjoin.c Checking.c duplicate.c ft_strlen.c operations.c
 
 OBJ = $(SRC:.c=.o)
 

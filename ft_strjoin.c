@@ -6,24 +6,12 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 01:54:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/12 21:19:37 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/13 19:05:23 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <libc.h>
+#include "push_swap.h"
 
-static	ssize_t ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 static int		lenght(char **str, char *del, int size)//longueur totale d une serie de chaines de caracteres str
 												//longueur totale du delimiteur
 												//le nbre totale de chaines de caracteres (size)

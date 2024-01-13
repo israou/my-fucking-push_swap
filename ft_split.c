@@ -6,12 +6,11 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 01:57:01 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/13 00:28:18 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/13 19:02:06 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
-
+#include "push_swap.h"
 
 static int	countword(const char *str, char c)
 {

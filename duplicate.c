@@ -19,22 +19,6 @@ int		duplicate(char **dupp)
 	}
 	return (0);
 }
-// int		duplicate(t_robio *head)
-// {
-// 	t_robio	*node;
-// 	t_robio	*node1;
-
-
-// 	head->next = node;
-
-// 	if (!head || !head->next)
-// 		return ;//aucun doublon si la liste est vide
-// 	while (head != NULL)
-// 	{
-// 		if (node->content == node1->content)
-// 			return (1);
-
-// 	}
 
 	// printf("isinde addr == %p\n", &head);
 	// t_robio	*node;
