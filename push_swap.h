@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:10:20 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/13 20:34:35 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/14 01:31:32 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ void	ft_swap(t_robio **a);
 void	ft_ss(t_robio **a, t_robio **b);
 void	ft_rotate(t_robio **a);
 void	ft_reverse_rotate(t_robio **a);
+// void	*ft_9bllstlast(t_robio *lst);
+void	ft_lstadd_front(t_robio **lst, t_robio *new);
 
 #endif

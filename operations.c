@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 19:10:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/13 23:20:01 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/14 01:24:22 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,17 @@ void	ft_rotate(t_robio **a)
 void	ft_reverse_rotate(t_robio **a)
 {
 	t_robio	*tmp;
+	t_robio	*tmp1;
+
 	if (!a || !*a || !(*a)->next)
 		return ;
 	tmp = ft_lstlast(*a);
-	tmp->next = (*a);
-	(*a) = (*a)->next;
+	tmp1 = *a;
+	while (tmp1->next->next)
+		tmp1= tmp1->next;
+	tmp1->next = NULL;
+	ft_lstadd_front(a, tmp);
+	(*a) = tmp;
 }
 
 void	ft_rr(t_robio **a, t_robio **b)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/13 23:42:31 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/01/14 01:31:18 by ichaabi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int		check_empty(const char *str)
@@ -108,7 +120,13 @@ int main(int ac, char **av)
 	}
 	return 0;
 }
-
+void	ft_lstadd_front(t_robio **lst, t_robio *new)
+{
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
+}
 t_robio	*ft_lstnew(int content)
 {
 	t_robio	*node;
@@ -131,6 +149,16 @@ t_robio	*ft_lstlast(t_robio *lst)
 	}
 	return (lst);
 }
+
+// void	*ft_9bllstlast(t_robio *tmp)
+// {
+// 	if (tmp == NULL)
+// 		return (NULL);
+
+// 	while (tmp->next->next)
+// 		tmp = tmp->next;
+// 	tmp->next = NULL;
+// }
 
 void	ft_lstadd_back(t_robio **lst, t_robio *new)
 {
