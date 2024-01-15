@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Checking.c                                         :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 23:20:45 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/14 17:43:56 by ichaabi          ###   ########.fr       */
+/*   Created: 2024/01/14 17:44:26 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/01/15 18:37:01 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atoi(const char *str)
-{
-	long		i;
-	long		sign;
-	long	numb;
+// void	sorting_three(t_robio **a)
+// {
+// 	if (max_nbr == 0)
+// 		rotate;
+// 	if (max_nbr == 1)
+// 		reverse;
+// 	if (first > second)
+// 		swap;
+// }
 
-	i = 0;
-	sign = 1;
-	numb = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == ' '))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		numb = (numb * 10) + (str[i] - 48);
-		i++;
-	}
-	return (sign * numb);
-}
+// void	sorting_five(t_robio **a)
+// {
+// 	int min_idx, max_idx;
 
+// 	push_b();
+// 	sorting_three(max_idx);
+// 	push_a();
+// }

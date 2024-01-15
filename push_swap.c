@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 23:42:31 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/14 01:31:18 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/15 18:33:23 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ int	is_int(char *str)
 int main(int ac, char **av)
 {
 	int i = 0;
-	t_robio *head = NULL;
+	t_robio *head_a = NULL;
+	// t_robio *head_b = NULL;
 	if (ac <= 1)
 		return (0);
 	while (av[i])
@@ -85,94 +86,65 @@ int main(int ac, char **av)
 		if (duplicate(&splited_args[i]))
 			ft_putstr_fd("Error\n", 2);
 		t_robio *node1 = ft_lstnew(ft_atoi(splited_args[i]));
-		ft_lstadd_back(&head, node1);
+		ft_lstadd_back(&head_a, node1);
 		i++;
 	}
-	t_robio *tmp = head;
+	t_robio *tmp = head_a;
 	while (tmp)
 	{
-		printf("num == %d\n", tmp->content);
+		printf("num == %d | ", tmp->content);
+		printf("index: %d\n", tmp->index);
 		tmp = tmp->next;
 	}
-	printf("\nswap\n");
-	ft_swap(&head);
-	tmp = head;
-	while (tmp)
-	{
-		printf("%d\n", tmp->content);
-		tmp = tmp->next;
-	}
-	printf("\nrotate\n");
-	ft_rotate(&head);
-	tmp = head;
-	while (tmp)
-	{
-		printf("%d\n", tmp->content);
-		tmp = tmp->next;
-	}
-	printf("\nreverserotate\n");
-	ft_reverse_rotate(&head);
-	tmp = head;
-	while (tmp)
-	{
-		printf("%d\n", tmp->content);
-		tmp = tmp->next;
-	}
+	int min_idx, max_idx;
+	check_max_min(&head_a, &min_idx, &max_idx);
+	printf("max_idx: %d | min_idx:%d\n", max_idx, min_idx);
+	// printf("\nswap\n");
+	// ft_swap(&head_a);
+	// tmp = head_a;
+	// while (tmp)
+	// {
+	// 	printf("%d | ", tmp->content);
+	// 	printf("index: %d\n", tmp->index);
+	// 	tmp = tmp->next;
+	// }
+	// printf("\nrotate\n");
+	// ft_rotate(&head_a);
+	// tmp = head_a;
+	// while (tmp)
+	// {
+	// 	printf("%d | ", tmp->content);
+	// 	printf("index: %d\n", tmp->index);
+	// 	tmp = tmp->next;
+	// }
+	// printf("\nreverserotate\n");
+	// ft_reverse_rotate(&head_a);
+	// tmp = head_a;
+	// while (tmp)
+	// {
+	// 	printf("%d | ", tmp->content);
+	// 	printf("index: %d\n", tmp->index);
+	// 	tmp = tmp->next;
+	// }
+	// printf("\npush_b\n");
+	// push_b(&head_a, &head_b);
+	// push_b(&head_a, &head_b);
+	// tmp = head_b;
+	// while (tmp)
+	// {
+	// 	printf("%d | ", tmp->content);
+	// 	printf("index: %d\n", tmp->index);
+	// 	tmp = tmp->next;
+	// }
+	// printf("\npush_a\n");
+	// push_a(&head_b, &head_a);
+	// push_a(&head_b, &head_a);
+	// tmp = head_a;
+	// while (tmp)
+	// {
+	// 	printf("%d | ", tmp->content);
+	// 	printf("index: %d\n", tmp->index);
+	// 	tmp = tmp->next;
+	// }
 	return 0;
-}
-void	ft_lstadd_front(t_robio **lst, t_robio *new)
-{
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
-}
-t_robio	*ft_lstnew(int content)
-{
-	t_robio	*node;
-
-	node = malloc(sizeof(t_robio));
-	if (!node)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
-}
-
-t_robio	*ft_lstlast(t_robio *lst)
-{
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next)
-	{
-		lst = lst->next;
-	}
-	return (lst);
-}
-
-// void	*ft_9bllstlast(t_robio *tmp)
-// {
-// 	if (tmp == NULL)
-// 		return (NULL);
-
-// 	while (tmp->next->next)
-// 		tmp = tmp->next;
-// 	tmp->next = NULL;
-// }
-
-void	ft_lstadd_back(t_robio **lst, t_robio *new)
-{
-	t_robio	*lis;
-
-	if (!lst || !new)
-		return ;
-	if (*lst)
-	{
-		lis = ft_lstlast(*lst);
-		lis->next = new;
-	}
-	else
-	{
-		(*lst) = new;
-	}
 }

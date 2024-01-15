@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:10:20 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/14 01:31:32 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/15 18:32:54 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 typedef struct s_robio
 {
 	int	content;
+	int	index;
 	struct s_robio *next;
 } t_robio;
 
@@ -39,8 +40,13 @@ int		duplicate(char **dupp);
 void	ft_swap(t_robio **a);
 void	ft_ss(t_robio **a, t_robio **b);
 void	ft_rotate(t_robio **a);
+void	rarb(t_robio **a, t_robio **b);
 void	ft_reverse_rotate(t_robio **a);
-// void	*ft_9bllstlast(t_robio *lst);
+void	ft_rrr(t_robio **a, t_robio **b);
 void	ft_lstadd_front(t_robio **lst, t_robio *new);
-
+void	push_b(t_robio **a, t_robio **b);
+void	push_a(t_robio **b, t_robio **a);
+int		ft_lstsize(t_robio *lst);
+void		indexmystack(t_robio **a);
+void		check_max_min(t_robio **a, int *min_idx, int *max_idx);
 #endif

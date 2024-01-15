@@ -27,4 +27,3 @@ int		duplicate(char **dupp)
 	// printf("inside content head == %d\n", head->content);
 
 	// head->next = node;
-
