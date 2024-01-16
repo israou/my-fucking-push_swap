@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:44:26 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/16 02:34:18 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/16 17:43:50 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	sorting_five(t_robio **a, t_robio **b)
 		push_b(a, b);
 		sorting_five(a, b);
 	}
-	// aff(*a, *b, ft_max(ft_lstsize(*a), ft_lstsize(*b)));
 	sorting_three(a);
 	push_a(b, a);
 	push_a(b, a);

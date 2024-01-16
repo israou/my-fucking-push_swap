@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 19:10:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/16 02:35:56 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/16 17:44:18 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	ft_swap(t_robio **a)//void hit deja kan sifto **a donc ki t updata f stack
 
 void	ft_ss(t_robio **a, t_robio **b)
 {
-	if (!a && !b)
-		return ;
 	ft_swap(a);
 	ft_swap(b);
 }
@@ -48,8 +46,6 @@ void	ft_rotate(t_robio **a)
 
 void	rarb(t_robio **a, t_robio **b)
 {
-	if (!a || !b)
-		return ;
 	ft_rotate(a);
 	ft_rotate(b);
 }
@@ -67,7 +63,6 @@ void	ft_reverse_rotate(t_robio **a)
 		tmp1 = tmp1->next;
 	tmp1->next = NULL;
 	ft_lstadd_front(a, tmp);
-	// (*a) = tmp;
 	indexmystack(a);
 }
 
@@ -80,7 +75,8 @@ void	ft_rrr(t_robio **a, t_robio **b)
 void	push_b(t_robio **a, t_robio **b)
 {
 	t_robio *tmp;
-
+	if (!*a)
+		return ;
 	tmp = (*a);
 	(*a) = (*a)->next;
 	tmp->next = (*b);
@@ -93,7 +89,7 @@ void	push_a(t_robio **b, t_robio **a)
 {
 	t_robio	*tmp;
 
-	if (!*a || !*b)
+	if (!*b)
 		return ;
 	tmp = (*b);
 	(*b)=(*b)->next;

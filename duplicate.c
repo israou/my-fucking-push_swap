@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   duplicate.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/16 16:59:11 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/01/16 17:45:19 by ichaabi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int		duplicate(char **dupp)
@@ -19,11 +31,3 @@ int		duplicate(char **dupp)
 	}
 	return (0);
 }
-
-	// printf("isinde addr == %p\n", &head);
-	// t_robio	*node;
-	// head->content = 300;
-	// head = head->next;
-	// printf("inside content head == %d\n", head->content);
-
-	// head->next = node;

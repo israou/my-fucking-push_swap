@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 23:42:31 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/16 02:35:37 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/16 17:36:12 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void    aff(t_robio *stack_a, t_robio *stack_b, int size)
 {
-    printf("------Start-----\n");
+    printf("------Start------\n");
     while (size)
     {
         if (stack_a)
@@ -36,7 +36,7 @@ void    aff(t_robio *stack_a, t_robio *stack_b, int size)
         printf("\n");
     }
     printf("-\t-\na\tb\n");
-    printf("------End-----\n");
+    printf("------ End ------\n");
 }
 
 
@@ -125,58 +125,13 @@ int main(int ac, char **av)
 		i++;
 	}
 	aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
-	sorting_five(&head_a, &head_b);
+	if (ft_lstsize(head_a) <= 3)
+		sorting_three(&head_a);
+	else if (ft_lstsize(head_a) <= 5)
+		sorting_five(&head_a, &head_b);
+	else
+		// bigsort
 	aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
-	puts("------------");
-	// int min_idx, max_idx;
-	// check_max_min(&head_a, &min_idx, &max_idx);
-	// printf("max_idx: %d | min_idx:%d\n", max_idx, min_idx);
-	// printf("\nswap\n");
-	// ft_swap(&head_a);
-	// tmp = head_a;
-	// while (tmp)
-	// {
-	// 	printf("%d | ", tmp->content);
-	// 	printf("index: %d\n", tmp->index);
-	// 	tmp = tmp->next;
-	// }
-	// printf("\nrotate\n");
-	// ft_rotate(&head_a);
-	// tmp = head_a;
-	// while (tmp)
-	// {
-	// 	printf("%d | ", tmp->content);
-	// 	printf("index: %d\n", tmp->index);
-	// 	tmp = tmp->next;
-	// }
-	// printf("\nreverserotate\n");
-	// ft_reverse_rotate(&head_a);
-	// tmp = head_a;
-	// while (tmp)
-	// {
-	// 	printf("%d | ", tmp->content);
-	// 	printf("index: %d\n", tmp->index);
-	// 	tmp = tmp->next;
-	// }
-	// printf("\npush_b\n");
-	// push_b(&head_a, &head_b);
-	// push_b(&head_a, &head_b);
-	// tmp = head_b;
-	// while (tmp)
-	// {
-	// 	printf("%d | ", tmp->content);
-	// 	printf("index: %d\n", tmp->index);
-	// 	tmp = tmp->next;
-	// }
-	// printf("\npush_a\n");
-	// push_a(&head_b, &head_a);
-	// push_a(&head_b, &head_a);
-	// tmp = head_a;
-	// while (tmp)
-	// {
-	// 	printf("%d | ", tmp->content);
-	// 	printf("index: %d\n", tmp->index);
-	// 	tmp = tmp->next;
-	// }
+	puts("-----------------");
 	return 0;
 }
