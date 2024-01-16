@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:10:20 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/15 18:32:54 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/16 02:34:52 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,15 @@ void	ft_lstadd_front(t_robio **lst, t_robio *new);
 void	push_b(t_robio **a, t_robio **b);
 void	push_a(t_robio **b, t_robio **a);
 int		ft_lstsize(t_robio *lst);
-void		indexmystack(t_robio **a);
-void		check_max_min(t_robio **a, int *min_idx, int *max_idx);
+void	indexmystack(t_robio **a);
+void	sorting_three(t_robio **a);
+void	check_max(t_robio **a, int *max_idx);
+int		check_min(t_robio **a);
+void	sorting_five(t_robio **a, t_robio **b);
+
+//////////////////  Affichage  ////////////////////
+
+void    aff(t_robio *stack_a, t_robio *stack_b, int size);
+int		ft_max(int x, int y);
+
 #endif

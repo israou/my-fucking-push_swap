@@ -6,11 +6,39 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 23:42:31 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/15 18:33:23 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/16 02:35:37 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "push_swap.h"
+
+void    aff(t_robio *stack_a, t_robio *stack_b, int size)
+{
+    printf("------Start-----\n");
+    while (size)
+    {
+        if (stack_a)
+        {
+            printf("%d| %d\t", stack_a->content, stack_a->index);
+            stack_a = stack_a->next;
+        }
+        else
+        {
+            printf("  |   \t");
+        }
+        if (stack_b)
+        {
+            printf("%d|", stack_b->content);
+            stack_b = stack_b->next;
+        }
+        size--;
+        printf("\n");
+    }
+    printf("-\t-\na\tb\n");
+    printf("------End-----\n");
+}
+
 
 int		check_empty(const char *str)
 {
@@ -60,11 +88,18 @@ int	is_int(char *str)
 	return (0);
 }
 
+int	ft_max(int x, int y)
+{
+	if (x > y)
+		return x;
+	return y;
+}
+
 int main(int ac, char **av)
 {
 	int i = 0;
 	t_robio *head_a = NULL;
-	// t_robio *head_b = NULL;
+	t_robio *head_b = NULL;
 	if (ac <= 1)
 		return (0);
 	while (av[i])
@@ -89,16 +124,13 @@ int main(int ac, char **av)
 		ft_lstadd_back(&head_a, node1);
 		i++;
 	}
-	t_robio *tmp = head_a;
-	while (tmp)
-	{
-		printf("num == %d | ", tmp->content);
-		printf("index: %d\n", tmp->index);
-		tmp = tmp->next;
-	}
-	int min_idx, max_idx;
-	check_max_min(&head_a, &min_idx, &max_idx);
-	printf("max_idx: %d | min_idx:%d\n", max_idx, min_idx);
+	aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
+	sorting_five(&head_a, &head_b);
+	aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
+	puts("------------");
+	// int min_idx, max_idx;
+	// check_max_min(&head_a, &min_idx, &max_idx);
+	// printf("max_idx: %d | min_idx:%d\n", max_idx, min_idx);
 	// printf("\nswap\n");
 	// ft_swap(&head_a);
 	// tmp = head_a;

@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 19:10:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/15 18:17:15 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/16 02:35:56 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ void	ft_reverse_rotate(t_robio **a)
 	tmp = ft_lstlast(*a);
 	tmp1 = *a;
 	while (tmp1->next->next)
-		tmp1= tmp1->next;
+		tmp1 = tmp1->next;
 	tmp1->next = NULL;
 	ft_lstadd_front(a, tmp);
-	(*a) = tmp;
+	// (*a) = tmp;
 	indexmystack(a);
 }
 
@@ -93,6 +93,8 @@ void	push_a(t_robio **b, t_robio **a)
 {
 	t_robio	*tmp;
 
+	if (!*a || !*b)
+		return ;
 	tmp = (*b);
 	(*b)=(*b)->next;
 	tmp->next = (*a);
@@ -100,22 +102,3 @@ void	push_a(t_robio **b, t_robio **a)
 	indexmystack(a);
 	indexmystack(b);
 }
-
-//fonction qui loupe ela stack kaml bash kan indexi stack
-
-// int		index(t_robio **a)
-// {
-// 	int index;
-
-// 	index = 0;
-// 	if (!a || !(*a) || !(*a)->next)
-// 		return (NULL);
-// 	t_robio *tmp = (*a);//pointeur vers le premier element
-// 	while (tmp)
-// 	{
-// 		tmp->index = index; //index de chaque noeud
-// 		index++;
-// 		tmp = tmp->next;
-// 	}
-// 	return (index);
-// }

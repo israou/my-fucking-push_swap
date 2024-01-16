@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 19:52:03 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/15 18:37:18 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/16 02:35:21 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,39 @@ void		indexmystack(t_robio **a)
 	}
 }
 
-//fonction qui check le plus grand nombre de linkedlist
-
-void		check_max_min(t_robio **a, int *min_idx, int *max_idx)
+void		check_max(t_robio **a, int *max_idx)
 {
-	int	min;
 	int	max;
-	min = (*a)->content;
-	max = (*a)->content;
+	t_robio *tmp = *a;
 
-	while ((*a)->next)
+	max = tmp->content;
+	while (tmp->next)
 	{
-		(*a) = (*a)->next;//pour avancer dans la liste
-		if ((*a)->content < min)//comparer la valeur du noeud actuel avc la valeur min actuelle
+		tmp = tmp->next;
+		if (tmp->content > max)
 		{
-			*min_idx = (*a)->index;
-			min = (*a)->content;
-		}
-		if ((*a)->content > max)
-		{
-				*max_idx = (*a)->index;
-				max = (*a)->content;
+				*max_idx = tmp->index;
+				max = tmp->content;
 		}
 	}
+}
+
+int	check_min(t_robio **a)
+{
+	int	min;
+	int min_idx;
+
+	t_robio *tmp = *a;
+	min = tmp->content;
+	min_idx = tmp->index;
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+		if (tmp->content < min)
+		{
+			min_idx = tmp->index;
+			min = tmp->content;
+		}
+	}
+	return (min_idx);
 }

@@ -6,27 +6,59 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:44:26 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/15 18:37:01 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/16 02:34:18 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	sorting_three(t_robio **a)
-// {
-// 	if (max_nbr == 0)
-// 		rotate;
-// 	if (max_nbr == 1)
-// 		reverse;
-// 	if (first > second)
-// 		swap;
-// }
+void	sorting_three(t_robio **a)
+{
+	int	max_idx;
 
-// void	sorting_five(t_robio **a)
-// {
-// 	int min_idx, max_idx;
+	max_idx = 0;
+	check_max(a, &max_idx);
+	if (max_idx == 0)// ghir lmax
+		ft_rotate(a);
+	if (max_idx == 1)
+		ft_reverse_rotate(a);
+	if ((*a)->content > (*a)->next->content)
+		ft_swap(a);
 
-// 	push_b();
-// 	sorting_three(max_idx);
-// 	push_a();
-// }
+}
+
+void	sorting_five(t_robio **a, t_robio **b)
+{
+	int min =  check_min(a);
+	if (ft_lstsize(*a) > 3)
+	{
+		if (min > ft_lstsize(*a) / 2)
+			while (min++ < ft_lstsize(*a))
+				ft_reverse_rotate(a);
+		else
+			while (min--)
+				ft_rotate(a);
+		push_b(a, b);
+		sorting_five(a, b);
+	}
+	// aff(*a, *b, ft_max(ft_lstsize(*a), ft_lstsize(*b)));
+	sorting_three(a);
+	push_a(b, a);
+	push_a(b, a);
+}
+/*
+	if (mahed size > 3)
+	{
+		if min > size / 2
+			while min < size diyal stack
+				rra();
+		else
+			while (min--)
+				ra();
+		push_B();
+		sorting_five();
+	}
+	sorting_three()
+	push_A();
+	push_A();
+*/
