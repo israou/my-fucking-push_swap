@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 18:08:55 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/14 20:04:09 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/17 13:14:52 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,30 +40,3 @@ void	ft_putchar_fd(int i, int fd)
 {
 	write(fd, &i, 1);
 }
-
-// void	ft_putnbr_fd(int n, int fd)
-// {
-// 	if (n < 0)
-// 	{
-// 		ft_putchar('-', fd);
-// 		n *= -1;
-// 	}
-// 	if (n > 9)
-// 	{
-// 		ft_putnbr(n / 10, fd);
-// 	}
-// 	ft_putchar_fd(n % 10 + '0', fd);
-// }
-
-
-// int main()
-// {
-// 	char t[] = "abcd";
-// 	char t1[] = "ab1d";
-
-// 	if (strcompare(t, t1) == 0)
-// 		puts("True");
-// 	else
-// 		puts("False");
-
-// }

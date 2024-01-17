@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 19:10:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/16 17:44:18 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/17 13:28:17 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_swap(t_robio **a)//void hit deja kan sifto **a donc ki t updata f stack
 	int	tmp;
 	t_robio	*b;
 
-	if (!a || !*a || !(*a)->next)
+	if (!a || !*a || !(*a)->next)//si a est null, si !*a est null cad kil y a aucun element dans la liste,, si !(*a->next est null cad il y a aucun element suivant dans la liste.)
 		return ;
 	b = (*a)->next;
 	tmp = (*a)->content;

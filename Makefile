@@ -6,7 +6,7 @@
 #    By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 16:58:42 by ichaabi           #+#    #+#              #
-#    Updated: 2024/01/16 16:58:44 by ichaabi          ###   ########.fr        #
+#    Updated: 2024/01/17 20:09:55 by ichaabi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 SRC = 	Checking.c \
+		ft_memset.c \
 		begin1.c \
 		duplicate.c \
 		ft_split.c \
@@ -28,7 +29,8 @@ SRC = 	Checking.c \
 		operations.c \
 		push_swap.c \
 		sorting.c \
-		utils_4_sort.c
+		utils_4_sort.c \
+		bigsort.c
 
 OBJ = $(SRC:.c=.o)
 

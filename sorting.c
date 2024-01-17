@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:44:26 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/16 17:43:50 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/16 19:44:23 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	sorting_five(t_robio **a, t_robio **b)
 	push_a(b, a);
 	push_a(b, a);
 }
+
+
 /*
 	if (mahed size > 3)
 	{

@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:37:15 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/15 18:21:45 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/17 19:07:49 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ t_robio	*ft_lstnew(int content)
 		return (NULL);
 	node->content = content;
 	node->next = NULL;
+	node->move = 0;
+	node->index = 0;
 	return (node);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 19:52:03 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/16 02:35:21 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/17 18:50:01 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ void		indexmystack(t_robio **a)
 	}
 }
 
-void		check_max(t_robio **a, int *max_idx)
+void		check_max(t_robio **a, int *max_idx)//kat qeleb lia ela lmax w kat etini index dialo
 {
 	int	max;
-	t_robio *tmp = *a;
+	t_robio *tmp = (*a);
 
+	if (!tmp)
+		return ;
 	max = tmp->content;
 	while (tmp->next)
 	{
@@ -47,12 +49,67 @@ void		check_max(t_robio **a, int *max_idx)
 	}
 }
 
+t_robio		*max_element(t_robio **a)
+{
+	int	max;
+	t_robio *tmp = *a;
+
+	if (!tmp)
+		return (NULL);
+	max = tmp->content;
+	while (tmp)
+	{
+		if (tmp->content > max)
+		{
+			max = tmp->content;
+		}
+		tmp = tmp->next;
+	}
+	tmp = *a;
+	while (tmp)
+	{
+		if (max == (tmp)->content)
+			return (tmp);
+		tmp = tmp->next;
+	}
+	return (NULL);
+}
+
+t_robio		*min_element(t_robio **a)
+{
+	int	min;
+	t_robio *tmp = *a;
+
+	if (!tmp)
+		return (NULL);
+	min = tmp->content;
+	while (tmp)
+	{
+		if (tmp->content < min)
+		{
+			min = tmp->content;
+		}
+		tmp = tmp->next;
+	}
+	tmp = *a;
+	while (tmp)
+	{
+		if (min == (tmp)->content)
+			return (tmp);
+		tmp = tmp->next;
+	}
+	return (NULL);//si la liste est vide
+}
+
 int	check_min(t_robio **a)
 {
 	int	min;
 	int min_idx;
 
 	t_robio *tmp = *a;
+
+	if (!tmp)
+		return (0);
 	min = tmp->content;
 	min_idx = tmp->index;
 	while (tmp->next)
