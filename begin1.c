@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 18:08:55 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/17 13:14:52 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/18 01:52:41 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,3 @@ void	ft_putstr_fd(char *str, int fd)
 		write(fd, &str[i++], 1);
 }
 
-void	ft_putchar_fd(int i, int fd)
-{
-	write(fd, &i, 1);
-}

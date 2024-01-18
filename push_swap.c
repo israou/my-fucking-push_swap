@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 23:42:31 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/17 20:13:53 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/18 01:50:34 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,16 +128,14 @@ int main(int ac, char **av)
 		i++;
 	}
 	int full_size = ft_lstsize(head_a);
-	aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
+	// aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
 	if (ft_lstsize(head_a) <= 3)
 		sorting_three(&head_a);
 	else if (ft_lstsize(head_a) <= 5)
 		sorting_five(&head_a, &head_b);
 	else
 		step_one(&head_a, &head_b, full_size);
-	printf("\nbigsort\n");
 
-	aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
-	puts("-----------------");
+	// aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
 	return 0;
 }

@@ -6,19 +6,21 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 19:10:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/17 13:28:17 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/18 01:49:20 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(t_robio **a)//void hit deja kan sifto **a donc ki t updata f stack
+void	ft_swap(t_robio **a, char *str)//void hit deja kan sifto **a donc ki t updata f stack
 {
 	int	tmp;
 	t_robio	*b;
 
 	if (!a || !*a || !(*a)->next)//si a est null, si !*a est null cad kil y a aucun element dans la liste,, si !(*a->next est null cad il y a aucun element suivant dans la liste.)
 		return ;
+	if (str)
+		ft_putstr_fd(str, 1);
 	b = (*a)->next;
 	tmp = (*a)->content;
 	(*a)->content = b->content;
@@ -26,17 +28,22 @@ void	ft_swap(t_robio **a)//void hit deja kan sifto **a donc ki t updata f stack
 	indexmystack(a);
 }
 
-void	ft_ss(t_robio **a, t_robio **b)
+void	ft_ss(t_robio **a, t_robio **b, char *str)
 {
-	ft_swap(a);
-	ft_swap(b);
+	if (str)
+		ft_putstr_fd(str, 1);
+	ft_swap(a, NULL);
+	ft_swap(b, NULL);
+
 }
 
-void	ft_rotate(t_robio **a)
+void	ft_rotate(t_robio **a, char *str)
 {
 	t_robio	*tmp;
 	if (!a || !*a || !(*a)->next)
 		return ;
+	if (str)
+		ft_putstr_fd(str, 1);
 	tmp = *a;
 	(*a) = (*a)->next;//update pour a
 	tmp->next = NULL;
@@ -44,19 +51,23 @@ void	ft_rotate(t_robio **a)
 	indexmystack(a);
 }
 
-void	rarb(t_robio **a, t_robio **b)
+void	rarb(t_robio **a, t_robio **b, char *str)
 {
-	ft_rotate(a);
-	ft_rotate(b);
+	if (str)
+		ft_putstr_fd(str, 1);
+	ft_rotate(a, NULL);
+	ft_rotate(b, NULL);
 }
 
-void	ft_reverse_rotate(t_robio **a)
+void	ft_reverse_rotate(t_robio **a, char *str)
 {
 	t_robio	*tmp;
 	t_robio	*tmp1;
 
 	if (!a || !*a || !(*a)->next)
 		return ;
+	if (str)
+		ft_putstr_fd(str, 1);
 	tmp = ft_lstlast(*a);
 	tmp1 = *a;
 	while (tmp1->next->next)
@@ -66,17 +77,22 @@ void	ft_reverse_rotate(t_robio **a)
 	indexmystack(a);
 }
 
-void	ft_rrr(t_robio **a, t_robio **b)
+void	ft_rrr(t_robio **a, t_robio **b, char *str)
 {
-	ft_reverse_rotate(a);
-	ft_reverse_rotate(b);
+	if (str)
+		ft_putstr_fd(str, 1);
+	ft_reverse_rotate(a, NULL);
+	ft_reverse_rotate(b, NULL);
+
 }
 
-void	push_b(t_robio **a, t_robio **b)
+void	push_b(t_robio **a, t_robio **b, char *str)
 {
 	t_robio *tmp;
 	if (!*a)
 		return ;
+	if (str)
+		ft_putstr_fd(str, 1);
 	tmp = (*a);
 	(*a) = (*a)->next;
 	tmp->next = (*b);
@@ -85,12 +101,14 @@ void	push_b(t_robio **a, t_robio **b)
 	indexmystack(b);
 }
 
-void	push_a(t_robio **b, t_robio **a)
+void	push_a(t_robio **b, t_robio **a, char *str)
 {
 	t_robio	*tmp;
 
 	if (!*b)
 		return ;
+	if (str)
+		ft_putstr_fd(str, 1);
 	tmp = (*b);
 	(*b)=(*b)->next;
 	tmp->next = (*a);
