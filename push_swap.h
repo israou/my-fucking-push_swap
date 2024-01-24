@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:10:20 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/18 01:43:10 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/23 20:20:29 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,21 @@ void	check_max(t_robio **a, int *max_idx);
 int		check_min(t_robio **a);
 void	sorting_five(t_robio **a, t_robio **b);
 t_robio	*get_top(t_robio *a, t_robio *b);
-int	get_min_move(t_robio *b, t_robio *top, int size_a, int size_b);
+int		get_min_move(t_robio *b, t_robio *top, int size_a, int size_b);
 
-void	step_one(t_robio **a, t_robio **b, int size);
+void	step_by_step(t_robio **a, t_robio **b, int size);
 t_robio	*max_element(t_robio **a);
-t_robio		*min_element(t_robio **a);
+t_robio	*min_element(t_robio **a);
 //////////////////  Affichage  ////////////////////
 
-void    aff(t_robio *stack_a, t_robio *stack_b, int size);
+void	aff(t_robio *stack_a, t_robio *stack_b, int size);
 int		ft_max(int x, int y);
+
+//moves//
+void	two_up(t_robio **a, t_robio **b, t_robio *top_a, t_robio *best);
+void	two_down(t_robio **a, t_robio **b, t_robio *top_a, t_robio *best);
+void	up_down(t_robio **a, t_robio **b, t_robio *top_a, t_robio *best);
+void	down_up(t_robio **a, t_robio **b, t_robio *top_a, t_robio *best);
+int	type_of_move(t_robio *elm_b, t_robio *elm_a, t_robio *a, t_robio *b);
 
 #endif

@@ -6,15 +6,14 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 19:52:03 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/17 18:50:01 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/23 20:30:42 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //fonction qui loupe ela stack kaml bash kan indexi stack
-
-void		indexmystack(t_robio **a)
+void	indexmystack(t_robio **a)
 {
 	int i;
 	t_robio *tmp = (*a);//pointeur vers le premier element
@@ -30,7 +29,7 @@ void		indexmystack(t_robio **a)
 	}
 }
 
-void		check_max(t_robio **a, int *max_idx)//kat qeleb lia ela lmax w kat etini index dialo
+void	check_max(t_robio **a, int *max_idx)//kat qeleb lia ela lmax w kat etini index dialo
 {
 	int	max;
 	t_robio *tmp = (*a);

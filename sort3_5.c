@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   sort3_5.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:44:26 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/18 01:45:19 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/23 15:20:06 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@ void	sorting_three(t_robio **a)
 
 	max_idx = 0;
 	check_max(a, &max_idx);
-	if (max_idx == 0)// ghir lmax
+	if (max_idx == 0)
 		ft_rotate(a, "ra\n");
 	if (max_idx == 1)
 		ft_reverse_rotate(a, "rra\n");
 	if ((*a)->content > (*a)->next->content)
 		ft_swap(a, "sa\n");
-
 }
 
 void	sorting_five(t_robio **a, t_robio **b)
