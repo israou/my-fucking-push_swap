@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 19:10:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/18 01:49:20 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/24 17:41:15 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	ft_swap(t_robio **a, char *str)//void hit deja kan sifto **a donc ki t updata f stack
 {
 	int	tmp;
-	t_robio	*b;
+	t_robio	*r;
 
 	if (!a || !*a || !(*a)->next)//si a est null, si !*a est null cad kil y a aucun element dans la liste,, si !(*a->next est null cad il y a aucun element suivant dans la liste.)
 		return ;
 	if (str)
 		ft_putstr_fd(str, 1);
-	b = (*a)->next;
+	r = (*a)->next;
 	tmp = (*a)->content;
-	(*a)->content = b->content;
-	b->content = tmp;
+	(*a)->content = r->content;
+	r->content = tmp;
 	indexmystack(a);
 }
 
@@ -40,7 +40,7 @@ void	ft_ss(t_robio **a, t_robio **b, char *str)
 void	ft_rotate(t_robio **a, char *str)
 {
 	t_robio	*tmp;
-	if (!a || !*a || !(*a)->next)
+	if (!a || !*a || !(*a)->next)//pointeur vers struct null, liste pointée par a est nulle, la liste contient un seul element
 		return ;
 	if (str)
 		ft_putstr_fd(str, 1);
@@ -96,7 +96,7 @@ void	push_b(t_robio **a, t_robio **b, char *str)
 	tmp = (*a);
 	(*a) = (*a)->next;
 	tmp->next = (*b);
-	(*b) = tmp;
+	(*b) = tmp;//l ancien sommet devient tmp li hoa a
 	indexmystack(a);
 	indexmystack(b);
 }

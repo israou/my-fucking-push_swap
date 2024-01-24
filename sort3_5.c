@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:44:26 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/23 15:20:06 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/24 17:53:38 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ void	sorting_three(t_robio **a)
 
 void	sorting_five(t_robio **a, t_robio **b)
 {
-	int min =  check_min(a);
+	int min = check_min(a);
 	if (ft_lstsize(*a) > 3)
 	{
-		if (min > ft_lstsize(*a) / 2)
+		if (min > ft_lstsize(*a) / 2)//si min est situé dans la deuxieme moitié de a
 			while (min++ < ft_lstsize(*a))
 				ft_reverse_rotate(a, "rra\n");
 		else
@@ -44,21 +44,3 @@ void	sorting_five(t_robio **a, t_robio **b)
 	push_a(b, a, "pa\n");
 	push_a(b, a, "pa\n");
 }
-
-
-/*
-	if (mahed size > 3)
-	{
-		if min > size / 2
-			while min < size diyal stack
-				rra();
-		else
-			while (min--)
-				ra();
-		push_B();
-		sorting_five();
-	}
-	sorting_three()
-	push_A();
-	push_A();
-*/

@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 19:52:03 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/23 20:30:42 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/24 17:53:16 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	check_max(t_robio **a, int *max_idx)//kat qeleb lia ela lmax w kat etini in
 
 	if (!tmp)
 		return ;
-	max = tmp->content;
+	max = tmp->content;//l element initial de la liste est utilisé comme valeur maximale présumée
 	while (tmp->next)
 	{
 		tmp = tmp->next;
@@ -48,6 +48,29 @@ void	check_max(t_robio **a, int *max_idx)//kat qeleb lia ela lmax w kat etini in
 	}
 }
 
+int	check_min(t_robio **a)
+{
+	int	min;
+	int min_idx;
+
+	t_robio *tmp = *a;
+
+	if (!tmp)
+		return (0);
+	min = tmp->content;//l elelemt initial est utilisé comme valeur minimale présumée
+	min_idx = tmp->index;
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+		if (tmp->content < min)
+		{
+			min_idx = tmp->index;
+			min = tmp->content;
+		}
+	}
+	return (min_idx);
+}
+
 t_robio		*max_element(t_robio **a)
 {
 	int	max;
@@ -55,16 +78,16 @@ t_robio		*max_element(t_robio **a)
 
 	if (!tmp)
 		return (NULL);
-	max = tmp->content;
+	max = tmp->content;//l element initial de la liste est utilisé comme valeur maximale présumée
 	while (tmp)
 	{
 		if (tmp->content > max)
 		{
-			max = tmp->content;
+			max = tmp->content;//mise a jou pour max
 		}
 		tmp = tmp->next;
 	}
-	tmp = *a;
+	tmp = *a;//parcourir a nouveau a pour trouver lelement dont lcontent correspond a la valeur max, des que cet element est rouvé la fct retourne un pointeur vers cet element
 	while (tmp)
 	{
 		if (max == (tmp)->content)
@@ -98,27 +121,4 @@ t_robio		*min_element(t_robio **a)
 		tmp = tmp->next;
 	}
 	return (NULL);//si la liste est vide
-}
-
-int	check_min(t_robio **a)
-{
-	int	min;
-	int min_idx;
-
-	t_robio *tmp = *a;
-
-	if (!tmp)
-		return (0);
-	min = tmp->content;
-	min_idx = tmp->index;
-	while (tmp->next)
-	{
-		tmp = tmp->next;
-		if (tmp->content < min)
-		{
-			min_idx = tmp->index;
-			min = tmp->content;
-		}
-	}
-	return (min_idx);
 }
