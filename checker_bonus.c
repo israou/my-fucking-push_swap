@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:54:13 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/24 17:15:17 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/24 20:00:44 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,5 +271,16 @@ char	*get_next_line(int fd)
 		stash = ft_strjoin(stash, buf); //concatenation de buf dans stash
 		if (checknewline(stash) >= 0) //s'il contient \n
 			return (free(buf), divising(stash, &stash));
+	}
+}
+
+int main(int ac, char **av)
+{
+	char *line = get_next_line();
+
+	while (1)
+	{
+		if (strcompare(line, "sa\n"))
+			ft_swap(a, line);
 	}
 }

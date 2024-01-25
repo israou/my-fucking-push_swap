@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 19:10:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/24 17:41:15 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/25 15:50:54 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_swap(t_robio **a, char *str)//void hit deja kan sifto **a donc ki t updata f stack
 {
-	int	tmp;
+	int	tmp;//pske le contenu de t_robio est manipulé comme valeur entiere, content mdeclarer int
 	t_robio	*r;
 
 	if (!a || !*a || !(*a)->next)//si a est null, si !*a est null cad kil y a aucun element dans la liste,, si !(*a->next est null cad il y a aucun element suivant dans la liste.)
@@ -34,7 +34,6 @@ void	ft_ss(t_robio **a, t_robio **b, char *str)
 		ft_putstr_fd(str, 1);
 	ft_swap(a, NULL);
 	ft_swap(b, NULL);
-
 }
 
 void	ft_rotate(t_robio **a, char *str)
@@ -44,7 +43,7 @@ void	ft_rotate(t_robio **a, char *str)
 		return ;
 	if (str)
 		ft_putstr_fd(str, 1);
-	tmp = *a;
+	tmp = *a;//tmp pointe vers la meme addresse que *a, donc partagent le meme contenu mais ne stocke pas le contenu..
 	(*a) = (*a)->next;//update pour a
 	tmp->next = NULL;
 	ft_lstlast(*a)->next = tmp;

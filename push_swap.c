@@ -6,10 +6,9 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 23:42:31 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/24 17:56:17 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/25 15:25:00 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -128,18 +127,22 @@ int main(int ac, char **av)
 	if (ft_lstsize(head_a) == 1)
 		return (0);
 	if (ft_lstsize(head_a) == 2 && head_a->content > head_a->next->content)
-	{
 		ft_swap(&head_a, "sa\n");
-		return (0);
-	}
-	else
-		return (0);
 	if (ft_lstsize(head_a) == 3)
 		sorting_three(&head_a);
-	else if (ft_lstsize(head_a) <= 5)
+	if (ft_lstsize(head_a) == 4 || ft_lstsize(head_a) == 5)
 		sorting_five(&head_a, &head_b);
 	else
 		step_by_step(&head_a, &head_b, full_size);
 	aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
+	// while (head_a && head_a->next)
+	// {
+	// 	if (head_a->content > head_a->next->content)
+	// 	{
+	// 		puts("FUCKEDUP");
+	// 		exit(0);
+	// 	}
+	// 	head_a = head_a->next;
+	// }
 	return 0;
 }

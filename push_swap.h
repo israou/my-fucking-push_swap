@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:10:20 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/23 20:20:29 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/24 19:47:37 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ typedef struct s_robio
 } t_robio;
 
 int		ft_strlen(char *s);
-void	*ft_memset(void *str, int c, size_t n);
 char	*ft_strjoin(char **arg, char *del, int size);
 int		strcompare(const char *s1, const char *s2);
 void	ft_putstr_fd(char *str, int fd);

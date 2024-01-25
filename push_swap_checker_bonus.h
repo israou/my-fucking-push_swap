@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 21:06:08 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/23 21:14:14 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/24 19:53:59 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ int		checknewline(char *s);
 char	*divising(char *s, char **reste);
 char	*get_next_line(int fd);
 char	*extraction(char const *s, unsigned int start, size_t len);
+////operations\\\\\\\
+void	ft_swap(t_robio **a, char *str);
+void	ft_ss(t_robio **a, t_robio **b, char *str);
+void	ft_rotate(t_robio **a, char *str);
+void	rarb(t_robio **a, t_robio **b, char *str);
+void	ft_reverse_rotate(t_robio **a, char *str);
+void	ft_rrr(t_robio **a, t_robio **b, char *str);
 
 
 #endif

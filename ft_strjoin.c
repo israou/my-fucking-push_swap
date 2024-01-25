@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 01:54:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/14 17:42:21 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/25 16:37:22 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,38 +50,29 @@ static char		*ft_strcat(char *dest, char *src)
 
 char	*ft_strjoin(char **arg, char *del, int size)//tableau de chaine de caractare, delimiteur , la taille du tableau
 {
-	char	*israa;//chaine de caractere resultante
+	char	*result;//chaine de caractere resultante
 	int		i;
 
 	i = 0;
 	if (size <= 0) //si la taille est inferieure ou egale a zero j alloue la memoire pour une chaine de caractere vide
 	{
-		israa = malloc(sizeof(char));
-		if (!israa)
+		result = malloc(sizeof(char));
+		if (!result)
 			return (NULL);
-		israa[i] = '\0';
-		return (israa);
+		result[i] = '\0';
+		return (result);
 	}
-	israa = (char *)malloc(sizeof(char)*(lenght(arg, del, size) + 1));
-	if (!israa)
+	result = (char *)malloc(sizeof(char)*(lenght(arg, del, size) + 1));
+	if (!result)
 		return (NULL);
-	israa[i] = '\0';
+	result[i] = '\0';
 	while (i < size)
 	{
-		ft_strcat(israa, arg[i]);
+		ft_strcat(result, arg[i]);
 		if (i < size - 1) //si ce n est pas la derniere iteration concatene le delimiteur
-			ft_strcat(israa, del);
+			ft_strcat(result, del);
 		i++;
 	}
-	return (israa);
+	return (result);
 }
-// int main()
-// {
-// 	char *arr[] = {"23", "54", "6", "hif", "'  '"};
-// 	char *delimiter = " ";
-// 	int array_size = sizeof(arr) / sizeof(arr[0]);
-// 	char *result = ft_strjoin(arr, delimiter, array_size);
-// 	printf("Result: $%s$\n", result);
-// 	free(result);
-// 	return 0;
-// }
+//cette fonction est plus flexible car elle prend en charge la concatenatiion de plusieurs chaines avec un caractere delimiteur 
