@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:10:20 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/24 19:47:37 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/26 20:55:33 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 #define PUSH_SWAP_H
 
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h> //malloc
-#include <stddef.h> //size_t
-#include <limits.h> //int_max int_min
+
+# ifndef BUFFER_SIZE
+# define BUFFER_SIZE 20
+# endif
+
+# include <unistd.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <stdlib.h> //malloc
+# include <stddef.h> //size_t
+# include <limits.h> //int_max int_min
 
 typedef struct s_robio
 {
@@ -28,11 +34,15 @@ typedef struct s_robio
 	struct s_robio *next;
 } t_robio;
 
-int		ft_strlen(char *s);
+int		ft_strlen(const char *s);
+int	check_empty(const char *str);
+int		ft_isdigit(char *str);
+int	is_int(char *str);
+int	ft_max(int x, int y);
 char	*ft_strjoin(char **arg, char *del, int size);
 int		strcompare(const char *s1, const char *s2);
 void	ft_putstr_fd(char *str, int fd);
-char	**ft_spliiiit(const char *s, char c);
+char	**ft_split(const char *s, char c);
 long	ft_atoi(const char *str);
 t_robio	*ft_lstnew(int content);
 void	ft_lstadd_back(t_robio **lst, t_robio *new);
@@ -70,5 +80,14 @@ void	two_down(t_robio **a, t_robio **b, t_robio *top_a, t_robio *best);
 void	up_down(t_robio **a, t_robio **b, t_robio *top_a, t_robio *best);
 void	down_up(t_robio **a, t_robio **b, t_robio *top_a, t_robio *best);
 int	type_of_move(t_robio *elm_b, t_robio *elm_a, t_robio *a, t_robio *b);
+
+//checker//
+char	*divising(char *s, char **reste);
+char	*get_next_line(int fd);
+int	checknewline(char *s);
+char	*ft_strdup(char *s);
+char	*join4checker(char const *stash, char const *buf);
+char	*extraction(char const *s, unsigned int start, size_t len);
+
 
 #endif

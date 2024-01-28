@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:06:11 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/23 20:19:26 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/26 23:41:01 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	get_min_move(t_robio *b, t_robio *top, int size_a, int size_b)
 	up_down = top->index + size_b - b->index;
 
 	down_up = size_a - top->index + b->index;
-
 	if (two_up <= two_down && two_up <= up_down && two_up <= down_up)
 		return (two_up);
 	if (two_down <= two_up && two_down <= up_down && two_down <= down_up)

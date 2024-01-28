@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   split_4checker.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 01:57:01 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/16 17:45:56 by ichaabi          ###   ########.fr       */
+/*   Created: 2024/01/27 20:38:03 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/01/27 20:38:13 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 static int	countword(const char *str, char c)
 {
@@ -73,7 +73,7 @@ static char	**ft_free(char **s)//pour liberer la memoire allouee pour un tableu 
 	return (NULL);
 }
 
-char	**ft_spliiiit(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**res; //tableau de chaines de caracteres
 	int		wc;//nbre de mots das la chaine
@@ -99,15 +99,3 @@ char	**ft_spliiiit(const char *s, char c)
 	free((char *)s);
 	return (res);
 }
-// int main()
-// {
-// 	char str[] = "robio 32 ' ' 37 fhdu7 9238 8 3 2";
-// 	char **result = ft_spliiiit(str, ' ');
-// 	int i = 0;
-// 	while (result[i] != NULL)
-// 	{
-// 		printf("%s\n", result[i]);
-// 		i++;
-// 	}
-// 	ft_free(result);
-// }

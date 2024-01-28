@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 20:20:39 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/25 20:23:25 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/27 00:58:47 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,20 @@ void push_best_move_to_a(t_robio **a, t_robio **b, t_robio *best)
 	push_a(b, a, "pa\n");
 }
 
-void	index_moves(t_robio *a, t_robio **b)
+void	index_moves(t_robio *a, t_robio **b)//kan zid nejma b & kan hayedha b *
 {
 	t_robio *stack_b = *b;
 	t_robio *top;
+	// t_robio *stack_k = *b;
 	while (stack_b)
 	{
 		top = get_top(a, stack_b);
 		stack_b->move = get_min_move(stack_b, top, ft_lstsize(a), ft_lstsize(*b)) + 1;
+		// printf("stack_k === %d\n", stack_b->content);
+		// printf("stack_k move === %d\n", stack_b->move);
 		stack_b = stack_b->next;
 	}
+	// aff(a, *b, 10);
 }
 
 void	step_by_step(t_robio **a, t_robio **b, int size)
@@ -90,7 +94,7 @@ void	step_by_step(t_robio **a, t_robio **b, int size)
 
 	i = 0;
 	// step_one
-	while (i <= size - 3)//bach nkheli 2 f a w kolshy ymshi l b
+	while (i < size - 2)//bach nkheli 2 f a w kolshy ymshi l b
 	{
 		push_b(a, b, "pb\n");
 		i++;

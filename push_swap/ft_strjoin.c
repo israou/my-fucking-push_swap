@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 01:54:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/25 16:37:22 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/26 18:05:35 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,4 @@ char	*ft_strjoin(char **arg, char *del, int size)//tableau de chaine de caractar
 	}
 	return (result);
 }
-//cette fonction est plus flexible car elle prend en charge la concatenatiion de plusieurs chaines avec un caractere delimiteur 
+//cette fonction est plus flexible car elle prend en charge la concatenatiion de plusieurs chaines avec un caractere delimiteur
