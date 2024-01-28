@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 20:06:11 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/26 23:41:01 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/28 21:08:33 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	two_up(t_robio **a, t_robio **b, t_robio *top_a, t_robio *best)
 {
 	while (top_a->content != (*a)->content && best->content != (*b)->content)
-		rarb(a, b, "rarb\n");
+		rr(a, b, "rr\n");
 	while (top_a->content != (*a)->content)
 		ft_rotate(a, "ra\n");
 	while (best->content != (*b)->content)

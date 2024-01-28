@@ -6,7 +6,7 @@
 #    By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 16:58:42 by ichaabi           #+#    #+#              #
-#    Updated: 2024/01/28 17:52:34 by ichaabi          ###   ########.fr        #
+#    Updated: 2024/01/28 21:55:46 by ichaabi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,14 +35,16 @@ SRC = 	affichage.c \
 		sort3_5.c \
 		utils_4_sort.c
 
-SRC_B = bonus/checker_bonus.c \
-		bonus/parsing_checker.c \
-		bonus/compare_put.c \
-		bonus/checker_duplicate.c \
-		bonus/checker_linked_utils.c \
-		bonus/checker_operations.c \
-		bonus/checker_utils_gnl.c \
-		bonus/checker_gnl.c
+SRC_B =	../bonus/parsing_checker.c \
+		../bonus/compare_put.c \
+		../bonus/checker_duplicate.c \
+		../bonus/checker_linked_utils.c \
+		../bonus/checker_operations.c \
+		../bonus/checker_utils_gnl.c \
+		../bonus/checker_gnl.c		\
+		../bonus/checker_bonus.c \
+		../bonus/split_4checker.c \
+		../bonus/join4checker.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -53,17 +55,17 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-bonus: $(OBJB) $(OBJ)
+bonus: $(OBJB)
 		$(CC) $(OBJB) -o $(NAME_B)
 
-%.o : %.c push_swap.h
+%.o : %.c ../bonus/checker_bonus.h
 		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-		$(RM) $(OBJ) $(OBJB)
+	$(RM) $(OBJ) $(OBJB)
 
 fclean: clean
-		$(RM) $(NAME) $(NAME_B)
+	$(RM) $(NAME) $(NAME_B)
 
 re: fclean all
 
