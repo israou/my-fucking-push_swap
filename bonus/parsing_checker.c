@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:40:19 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/27 16:45:50 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/29 21:09:27 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	check_empty(const char *str)
 	i = 0;
 	if (str[0] == '\0') // empty
 		return (1);
-	while(str[i] == ' ')
+	while (str[i] == ' ')
 		i++; // bzaf dial les espaces
 	if (str[i] == '\0')
 		return (1);

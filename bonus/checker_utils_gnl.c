@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:37:59 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/27 16:53:12 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/28 21:17:58 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strdup(char *s)
 	return (pa);
 }
 
-char	*join4checker(char const *stash, char const *buf)
+char	*join4gnl(char const *stash, char const *buf)
 {
 	int		i;
 	int		j;

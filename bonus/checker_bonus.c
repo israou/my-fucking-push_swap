@@ -6,23 +6,22 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:01:48 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/28 20:13:24 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/31 17:43:46 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-void	checker_moves(t_robio *a, t_robio *b, char *line)
+void	checker_moves(t_robio **a, t_robio **b, char *line)
 {
-	// char *line = get_next_line(0);
 	if (strcompare(line, "sa\n") == 0)
 		ft_swap(a);
 	else if (strcompare(line, "ss\n") == 0)
 		ft_ss(a, b);
 	else if (strcompare(line, "ra\n") == 0)
 		ft_rotate(a);
-	else if (strcompare(line, "rarb\n") == 0)
-		rarb(a, b);
+	else if (strcompare(line, "rr\n") == 0)
+		rr(a, b);
 	else if (strcompare(line, "rra\n") == 0)
 		ft_reverse_rotate(a);
 	else if (strcompare(line, "rrr\n") == 0)
@@ -45,10 +44,10 @@ void	ft_check(int ac, char **av, t_robio **a)
 	if (check_empty(av[i]))
 		ft_putstr_fd("Error\n", 2);
 	i++;
-	i = 0;
 	char **splitted_args = ft_split(ft_strjoin(av + 1, " ", ac - 1), ' ');
 	if (splitted_args == NULL)
 		ft_putstr_fd("Error\n", 2);
+	i = 0;
 	while (splitted_args[i])
 	{
 		if (ft_isdigit(splitted_args[i]))
@@ -66,21 +65,20 @@ void	ft_check(int ac, char **av, t_robio **a)
 int		check_sort(t_robio *a)
 {
 	if (!a || !a->next)
-		return (1);
+		return (0);
 	while (a && a->next)
 	{
 		if (a->content > a->next->content)
 		{
-			return (0);
+			return (1);
 		}
 		a = a->next;
 	}
-	return (1);
+	return (0);
 }
 
 int main(int ac, char **av)
 {
-	int i = 0;
 	t_robio *head_a = NULL;
 	t_robio *head_b = NULL;
 
@@ -90,12 +88,11 @@ int main(int ac, char **av)
 	char *line = get_next_line(0);
 	while (line)
 	{
-		printf("%s", line);
 		checker_moves(&head_a, &head_b, line);
 		free(line);
 		line = get_next_line(0);
 	}
-	if (check_sort(head_a) == 1)
+	if (check_sort(head_a) == 0 && ft_lstsize(head_b) == 0)
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);

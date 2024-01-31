@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:38:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/27 16:39:46 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/30 15:58:25 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*get_next_line(int fd)
 			return (free(buf), NULL);
 		}
 		buf[readd] = '\0';
-		stash = join4checker(stash, buf); //concatenation de buf dans stash
+		stash = join4gnl(stash, buf); //concatenation de buf dans stash
 		if (checknewline(stash) >= 0) //s'il contient \n
 			return (free(buf), divising(stash, &stash));
 	}
@@ -72,7 +72,6 @@ char	*get_next_line(int fd)
 // int main(void)
 // {
 // 	char *line = get_next_line(0);
-
 // 	while (line)
 // 	{
 // 		printf("%s", line);

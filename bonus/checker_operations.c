@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:46:51 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/27 20:41:23 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/28 21:08:33 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_rotate(t_robio **a)
 	indexmystack(a);
 }
 
-void	rarb(t_robio **a, t_robio **b)
+void	rr(t_robio **a, t_robio **b)
 {
 	ft_rotate(a);
 	ft_rotate(b);
