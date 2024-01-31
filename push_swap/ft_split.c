@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 01:57:01 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/26 18:18:29 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/29 21:07:00 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,15 +99,3 @@ char	**ft_split(const char *s, char c)
 	free((char *)s);
 	return (res);
 }
-// int main()
-// {
-// 	char str[] = "robio 32 ' ' 37 fhdu7 9238 8 3 2";
-// 	char **result = ft_spliiiit(str, ' ');
-// 	int i = 0;
-// 	while (result[i] != NULL)
-// 	{
-// 		printf("%s\n", result[i]);
-// 		i++;
-// 	}
-// 	ft_free(result);
-// }

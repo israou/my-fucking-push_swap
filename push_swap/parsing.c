@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:55:16 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/26 18:10:13 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/30 22:23:59 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,31 @@ int	check_empty(const char *str)
 	int	i;
 
 	i = 0;
-	if (str[0] == '\0') // empty
+	if (str[0] == '\0')
 		return (1);
-	while(str[i] == ' ')
-		i++; // bzaf dial les espaces
+	while (str[i] == ' ')
+		i++;
 	if (str[i] == '\0')
 		return (1);
 	return (0);
 }
 
-int		ft_isdigit(char *str)
+int	ft_isdigit(char *str)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	if ((str[0] == '-' || str[0] == '+') && str[1] == '\0')
-		return (1); // Error
+		return (1);
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
-			return (1); // Error
+			return (1);
 		i++;
 	}
-	return (0); // True
+	return (0);
 }
 
 int	is_int(char *str)
@@ -53,14 +55,14 @@ int	is_int(char *str)
 		i++;
 	if (num > INT_MAX || num < INT_MIN)
 		return (1);
-	if (ft_strlen(str + i) > ft_strlen("+2147483647"))//verifier si la longueur de a chaine est plus longue que la representation int_max
-		return (1);//str + i on decale i pour pointer vers le premier caractere apres les 0
+	if (ft_strlen(str + i) > ft_strlen("+2147483647"))
+		return (1);
 	return (0);
 }
 
 int	ft_max(int x, int y)
 {
 	if (x > y)
-		return x;
-	return y;
+		return (x);
+	return (y);
 }

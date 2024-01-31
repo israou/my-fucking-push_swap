@@ -6,19 +6,20 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 04:17:34 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/28 04:19:57 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/29 21:03:22 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		strcompare(const char *s1, const char *s2)
+int	strcompare(const char *s1, const char *s2)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (s2[i])
 	{
-		if(s1[i] != s2[i])
+		if (s1[i] != s2[i])
 			return (1);
 		i++;
 	}

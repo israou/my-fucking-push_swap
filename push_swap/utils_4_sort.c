@@ -6,18 +6,18 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 19:52:03 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/24 17:53:16 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/30 22:38:49 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//fonction qui loupe ela stack kaml bash kan indexi stack
 void	indexmystack(t_robio **a)
 {
-	int i;
-	t_robio *tmp = (*a);//pointeur vers le premier element
+	int		i;
+	t_robio	*tmp;//pointeur vers le premier element
 
+	tmp = (*a);
 	if (!a || !(*a) || !(*a)->next)
 		return ;
 	i = 0;
@@ -31,9 +31,10 @@ void	indexmystack(t_robio **a)
 
 void	check_max(t_robio **a, int *max_idx)//kat qeleb lia ela lmax w kat etini index dialo
 {
-	int	max;
-	t_robio *tmp = (*a);
+	int		max;
+	t_robio	*tmp;
 
+	tmp = (*a);
 	if (!tmp)
 		return ;
 	max = tmp->content;//l element initial de la liste est utilisé comme valeur maximale présumée
@@ -42,19 +43,19 @@ void	check_max(t_robio **a, int *max_idx)//kat qeleb lia ela lmax w kat etini in
 		tmp = tmp->next;
 		if (tmp->content > max)
 		{
-				*max_idx = tmp->index;
-				max = tmp->content;
+			*max_idx = tmp->index;
+			max = tmp->content;
 		}
 	}
 }
 
 int	check_min(t_robio **a)
 {
-	int	min;
-	int min_idx;
+	int		min;
+	int		min_idx;
+	t_robio	*tmp;
 
-	t_robio *tmp = *a;
-
+	tmp = *a;
 	if (!tmp)
 		return (0);
 	min = tmp->content;//l elelemt initial est utilisé comme valeur minimale présumée
@@ -71,11 +72,12 @@ int	check_min(t_robio **a)
 	return (min_idx);
 }
 
-t_robio		*max_element(t_robio **a)
+t_robio	*max_element(t_robio **a)
 {
-	int	max;
-	t_robio *tmp = *a;
+	int		max;
+	t_robio	*tmp;
 
+	tmp = *a;
 	if (!tmp)
 		return (NULL);
 	max = tmp->content;//l element initial de la liste est utilisé comme valeur maximale présumée
@@ -97,11 +99,12 @@ t_robio		*max_element(t_robio **a)
 	return (NULL);
 }
 
-t_robio		*min_element(t_robio **a)
+t_robio	*min_element(t_robio **a)
 {
-	int	min;
-	t_robio *tmp = *a;
+	int		min;
+	t_robio	*tmp;
 
+	tmp = *a;
 	if (!tmp)
 		return (NULL);
 	min = tmp->content;

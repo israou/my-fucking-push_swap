@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 01:54:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/26 18:05:35 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/29 21:07:21 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	lenght(char **str, char *del, int size)//longueur totale d une serie 
 	return (l);
 }
 
-static char		*ft_strcat(char *dest, char *src)
+static char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
 	int	j;

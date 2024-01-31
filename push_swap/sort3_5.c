@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:44:26 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/25 15:21:56 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/01/30 22:28:56 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ void	sorting_three(t_robio **a)
 
 void	sorting_five(t_robio **a, t_robio **b)
 {
-	int min = check_min(a);
+	int	min;
+
+	min = check_min(a);
 	if (ft_lstsize(*a) > 3)
 	{
-		if (min > ft_lstsize(*a) / 2)//si min est situé dans la deuxieme moitié de a
+		if (min > ft_lstsize(*a) / 2)
 			while (min++ < ft_lstsize(*a))
 				ft_reverse_rotate(a, "rra\n");
 		else
