@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 01:57:01 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/29 21:07:00 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/01 18:59:17 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,17 @@ static char	*get_word(const char *s, char c, int *i)
 	return (ptr); //extraire le mot
 }
 
-static char	**ft_free(char **s)//pour liberer la memoire allouee pour un tableu de chaine de caractere;
-								//elle utilise free pour liberer la memoire de chaque chaine individuelle dans le tableau
-								//puis libere la memoire du tableau lui meme
+static char	**ft_free(char **s)
 {
 	int		i;
 
 	i = 0;
-	while (s[i])
+	while (s[i])//kat iterer ela tableau 2d,
 	{
-		free(s[i]);
+		free(s[i]);//kat freyer kola pointeurs fih addresse separement, chaque chaine individuelle dans le tableau
 		i++;
 	}
-	free(s);//liberer la memoire du tableau de pointeurs
+	free(s);//liberer la memoire du tableau de pointeurs lui meme
 	return (NULL);
 }
 

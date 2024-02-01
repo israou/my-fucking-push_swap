@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 19:10:49 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/28 21:08:33 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/01 22:20:23 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ft_ss(t_robio **a, t_robio **b, char *str)
 void	ft_rotate(t_robio **a, char *str)
 {
 	t_robio	*tmp;
+	// t_robio	*tmp2;
 	if (!a || !*a || !(*a)->next)//pointeur vers struct null, liste pointée par a est nulle, la liste contient un seul element
 		return ;
 	if (str)
@@ -48,6 +49,7 @@ void	ft_rotate(t_robio **a, char *str)
 	tmp->next = NULL;
 	ft_lstlast(*a)->next = tmp;
 	indexmystack(a);
+	// free(tmp);
 }
 
 void	rr(t_robio **a, t_robio **b, char *str)
@@ -74,6 +76,8 @@ void	ft_reverse_rotate(t_robio **a, char *str)
 	tmp1->next = NULL;
 	ft_lstadd_front(a, tmp);
 	indexmystack(a);
+	// free(tmp1);
+	// free(tmp);
 }
 
 void	ft_rrr(t_robio **a, t_robio **b, char *str)
@@ -98,6 +102,7 @@ void	push_b(t_robio **a, t_robio **b, char *str)
 	(*b) = tmp;//l ancien sommet devient tmp li hoa a
 	indexmystack(a);
 	indexmystack(b);
+	// free(tmp);
 }
 
 void	push_a(t_robio **b, t_robio **a, char *str)
@@ -114,4 +119,5 @@ void	push_a(t_robio **b, t_robio **a, char *str)
 	(*a) = tmp;
 	indexmystack(a);
 	indexmystack(b);
+	// free(tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:11 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/31 16:13:29 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/01 23:14:59 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	duplicate(char **dupp)
 	int		j;
 
 	i = 0;
-	j = i + 1;
-	while (dupp[i]) //boucle externe qui parcourt la chaine de caracteres
+	while (i < length2d(dupp) - 1) //boucle externe qui parcourt la chaine de caracteres
 	{
+		j = i + 1;
 		while (dupp[j]) //boucle interne qui parcourt la chaine de caracteres a partir de l element suivant
 		{
 			if (ft_atoi(dupp[i]) == ft_atoi(dupp[j]))

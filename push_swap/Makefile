@@ -6,7 +6,7 @@
 #    By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 16:58:42 by ichaabi           #+#    #+#              #
-#    Updated: 2024/01/30 22:21:08 by ichaabi          ###   ########.fr        #
+#    Updated: 2024/02/01 23:17:18 by ichaabi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ SRC = 	affichage.c \
 		push_swap.c \
 		sort3_5.c \
 		utils_4_sort.c \
-		utils4minmove.c 
+		utils4minmove.c
 
 SRC_B =	../bonus/parsing_checker.c \
 		../bonus/compare_put.c \

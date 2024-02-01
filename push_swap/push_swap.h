@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:10:20 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/31 18:42:12 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/01 23:10:42 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,7 @@ char	*join4checker(char const *stash, char const *buf);
 char	*extraction(char const *s, unsigned int start, size_t len);
 int		check_sort(t_robio **a);
 void	ft_parsingcheck(int ac, char **av, t_robio **a);
+void	ft_lstclear(t_robio **lst);
+void	free_memory(char **args);
+int		length2d(char **splitted_args);
 #endif
