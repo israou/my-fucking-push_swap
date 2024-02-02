@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 23:42:31 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/02 19:52:03 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/02 22:49:11 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,23 @@ int	check_sort(t_robio **a)
 	t_robio	*head_a;
 
 	head_a = (*a);
+	int i = ft_lstsize(head_a);
+
 	if (ft_lstsize(head_a) == 1)
 		return (0);
-	if (ft_lstsize(head_a) == 2 && head_a->content > head_a->next->content)
+	else if (ft_lstsize(head_a) == 2 && head_a->content > head_a->next->content)
 		ft_swap(&head_a, "sa\n");
+	while (i > 1)
+	{
+		if (head_a->content < head_a->next->content)
+			head_a = head_a->next;
+		i--;
+	}
+	if (head_a->next == NULL)
+	{
+		ft_lstclear(a);
+		exit(EXIT_SUCCESS);
+	}
 	return (0);
 }
 int	length2d(char **splitted_args)
@@ -81,11 +94,12 @@ void	ft_parsingcheck(int ac, char **av, t_robio **a)
 		ft_lstclear(a);//iclearer dakshy li qbel
 		ft_putstr_fd("Error\n", 2);
 	}
+
 }
 
 int main(int ac, char **av)
 {
-	atexit(l);
+	// atexit(l);
 	t_robio	*head_a;
 	t_robio	*head_b;
 	int		i;
@@ -94,18 +108,18 @@ int main(int ac, char **av)
 	head_b = NULL;
 	i = 0;
 	if (ac <= 1)
-		ft_putstr_fd("Error\n", 2);
+		// ft_putstr_fd("Error\n", 2);
+		return (0);
 	ft_parsingcheck(ac, av, &head_a);
-	aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
-	if (ft_lstsize(head_a) == 1 || ft_lstsize(head_a) == 2)
-		check_sort(&head_a);
-	else if (ft_lstsize(head_a) == 3)
+	// aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
+	check_sort(&head_a);
+	if (ft_lstsize(head_a) == 3)
 		sorting_three(&head_a);
 	else if (ft_lstsize(head_a) == 4 || ft_lstsize(head_a) == 5)
 		sorting_five(&head_a, &head_b);
 	else
 		step_by_step(&head_a, &head_b, ft_lstsize(head_a));
-	aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
+	// aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
 	ft_lstclear(&head_a);
 	ft_lstclear(&head_b);
 	return 0;
