@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 23:42:31 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/01 23:24:59 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/02 19:52:03 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,20 +83,6 @@ void	ft_parsingcheck(int ac, char **av, t_robio **a)
 	}
 }
 
-void	free_memory(char **args)
-{
-	int	i;
-
-	i = 0;
-	if (!args)
-		return ;
-	while (args[i])
-	{
-		free(args[i]);
-		i++;
-	}
-	free (args);
-}
 int main(int ac, char **av)
 {
 	atexit(l);

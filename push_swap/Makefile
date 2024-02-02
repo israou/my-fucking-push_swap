@@ -6,7 +6,7 @@
 #    By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 16:58:42 by ichaabi           #+#    #+#              #
-#    Updated: 2024/02/01 23:17:18 by ichaabi          ###   ########.fr        #
+#    Updated: 2024/02/02 19:29:23 by ichaabi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,9 @@ SRC = 	affichage.c \
 		push_swap.c \
 		sort3_5.c \
 		utils_4_sort.c \
-		utils4minmove.c
+		utils4minmove.c \
+		free_linkedlist.c \
+		free_my_memory.c
 
 SRC_B =	../bonus/parsing_checker.c \
 		../bonus/compare_put.c \
@@ -46,6 +48,8 @@ SRC_B =	../bonus/parsing_checker.c \
 		../bonus/checker_bonus.c \
 		../bonus/split_4checker.c \
 		../bonus/join4checker.c \
+		../bonus/free_4checkerlinkedlist.c \
+		../bonus/free_memory.c
 
 OBJ = $(SRC:.c=.o)
 
