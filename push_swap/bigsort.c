@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 20:20:39 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/01 00:33:31 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/03 23:49:23 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	push_best_move_to_a(t_robio **a, t_robio **b, t_robio *best)
 	push_a(b, a, "pa\n");
 }
 
-void	index_moves(t_robio *a, t_robio **b)//kan zid nejma b & kan hayedha b *
+void	index_moves(t_robio *a, t_robio **b)
 {
 	t_robio	*stack_b;
 	t_robio	*top;
@@ -88,7 +88,8 @@ void	index_moves(t_robio *a, t_robio **b)//kan zid nejma b & kan hayedha b *
 	while (stack_b)
 	{
 		top = get_top(a, stack_b);
-		stack_b->move = get_min_move(stack_b, top, ft_lstsize(a), ft_lstsize(*b)) + 1;
+		stack_b->move = get_min_move(stack_b, top, \
+			ft_lstsize(a), ft_lstsize(*b)) + 1;
 		stack_b = stack_b->next;
 	}
 }
@@ -110,7 +111,7 @@ void	step_by_step(t_robio **a, t_robio **b, int size)
 	if (min_element(a)->index < ft_lstsize(*a) / 2)
 	{
 		i = min_element(a)->index;
-		while (i--) //postdesincrementation,, ki qaren 5 != 0 true, kinqes men 5 qbel may rotati
+		while (i--)
 			ft_rotate(a, "ra\n");
 	}
 	else

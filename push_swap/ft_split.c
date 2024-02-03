@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 01:57:01 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/01 18:59:17 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/03 23:47:51 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	countword(const char *str, char c)
 			i++;
 		if (str[i] != '\0')
 			count++;
-		while (str[i] && str[i] != c)//ignorer les caracteres du mot actuel jusqu'au prohain delimiteur
+		while (str[i] && str[i] != c)
 			i++;
 	}
 	return (count);
@@ -40,10 +40,10 @@ static char	*get_word(const char *s, char c, int *i)
 
 	while (s[*i] && s[*i] == c)
 		(*i)++;
-	start = *i;//j enregistre la position du debut du mot
+	start = *i;
 	while (s[*i] && s[*i] != c)
-		(*i)++;//j'avance jusqu'au prochain caractere delimiteur
-	len = *i - start;//calculer la longueur du mot
+		(*i)++;
+	len = *i - start;
 	ptr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
@@ -54,7 +54,7 @@ static char	*get_word(const char *s, char c, int *i)
 		k++;
 	}
 	ptr[k] = '\0';
-	return (ptr); //extraire le mot
+	return (ptr);
 }
 
 static char	**ft_free(char **s)
@@ -62,21 +62,21 @@ static char	**ft_free(char **s)
 	int		i;
 
 	i = 0;
-	while (s[i])//kat iterer ela tableau 2d,
+	while (s[i])
 	{
-		free(s[i]);//kat freyer kola pointeurs fih addresse separement, chaque chaine individuelle dans le tableau
+		free(s[i]);
 		i++;
 	}
-	free(s);//liberer la memoire du tableau de pointeurs lui meme
+	free(s);
 	return (NULL);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	char	**res; //tableau de chaines de caracteres
-	int		wc;//nbre de mots das la chaine
-	int		r;//indice pour parcourir le tableau resultant
-	int		i;//suivre la position dans la chaine actuelle
+	char	**res;
+	int		wc;
+	int		r;
+	int		i;
 
 	if (!s)
 		return (NULL);
@@ -91,7 +91,7 @@ char	**ft_split(const char *s, char c)
 		res[r] = get_word(s, c, &i);
 		if (!res[r])
 			return (free((char *)s), ft_free(res));
-			r++;
+		r++;
 	}
 	res[wc] = NULL;
 	free((char *)s);

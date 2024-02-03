@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 22:19:01 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/30 22:40:21 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/03 23:32:59 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	type_of_move(t_robio *elm_b, t_robio *elm_a, t_robio *a, t_robio *b)
 	int	down_up;
 
 	two_up = ft_max(elm_a->index, elm_b->index);
-	two_down = ft_max(ft_lstsize(a) - elm_a->index, ft_lstsize(b) - elm_b->index);
+	two_down = ft_max(ft_lstsize(a) - elm_a->index, \
+		ft_lstsize(b) - elm_b->index);
 	up_down = elm_a->index + ft_lstsize(b) - elm_b->index;
 	down_up = ft_lstsize(a) - elm_a->index + elm_b->index;
 	if (two_up <= two_down && two_up <= up_down && two_up <= down_up)

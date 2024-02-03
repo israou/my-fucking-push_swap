@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 17:44:26 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/02 19:58:20 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/03 23:28:57 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	sorting_five(t_robio **a, t_robio **b)
 			while (min++ < ft_lstsize(*a))
 				ft_reverse_rotate(a, "rra\n");
 		else
-			while (min--) //mahed min kikhalef 0
+			while (min--)
 				ft_rotate(a, "ra\n");
 		push_b(a, b, "pb\n");
 		sorting_five(a, b);

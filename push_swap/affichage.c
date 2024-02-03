@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:55:50 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/02 23:14:38 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/03 23:33:36 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	aff(t_robio *stack_a, t_robio *stack_b, int size)
 			stack_a = stack_a->next;
 		}
 		else
-			printf("  |   \t\t"); // ila makan walou f stack kann lqa |
+			printf("  |   \t\t");
 		if (stack_b)
 		{
 			printf("%4d|  %d", stack_b->content, stack_b->move);

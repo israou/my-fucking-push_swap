@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 19:52:03 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/30 22:38:49 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/03 23:31:51 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	indexmystack(t_robio **a)
 {
 	int		i;
-	t_robio	*tmp;//pointeur vers le premier element
+	t_robio	*tmp;
 
 	tmp = (*a);
 	if (!a || !(*a) || !(*a)->next)
@@ -23,13 +23,13 @@ void	indexmystack(t_robio **a)
 	i = 0;
 	while (tmp)
 	{
-		tmp->index = i; //index de chaque noeud
+		tmp->index = i;
 		i++;
 		tmp = tmp->next;
 	}
 }
 
-void	check_max(t_robio **a, int *max_idx)//kat qeleb lia ela lmax w kat etini index dialo
+void	check_max(t_robio **a, int *max_idx)
 {
 	int		max;
 	t_robio	*tmp;
@@ -37,7 +37,7 @@ void	check_max(t_robio **a, int *max_idx)//kat qeleb lia ela lmax w kat etini in
 	tmp = (*a);
 	if (!tmp)
 		return ;
-	max = tmp->content;//l element initial de la liste est utilisé comme valeur maximale présumée
+	max = tmp->content;
 	while (tmp->next)
 	{
 		tmp = tmp->next;
@@ -58,7 +58,7 @@ int	check_min(t_robio **a)
 	tmp = *a;
 	if (!tmp)
 		return (0);
-	min = tmp->content;//l elelemt initial est utilisé comme valeur minimale présumée
+	min = tmp->content;
 	min_idx = tmp->index;
 	while (tmp->next)
 	{
@@ -80,16 +80,16 @@ t_robio	*max_element(t_robio **a)
 	tmp = *a;
 	if (!tmp)
 		return (NULL);
-	max = tmp->content;//l element initial de la liste est utilisé comme valeur maximale présumée
+	max = tmp->content;
 	while (tmp)
 	{
 		if (tmp->content > max)
 		{
-			max = tmp->content;//mise a jou pour max
+			max = tmp->content;
 		}
 		tmp = tmp->next;
 	}
-	tmp = *a;//parcourir a nouveau a pour trouver lelement dont lcontent correspond a la valeur max, des que cet element est rouvé la fct retourne un pointeur vers cet element
+	tmp = *a;
 	while (tmp)
 	{
 		if (max == (tmp)->content)
@@ -123,5 +123,5 @@ t_robio	*min_element(t_robio **a)
 			return (tmp);
 		tmp = tmp->next;
 	}
-	return (NULL);//si la liste est vide
+	return (NULL);
 }
