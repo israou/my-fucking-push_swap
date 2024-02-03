@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_duplicate.c                                :+:      :+:    :+:   */
+/*   free_memory.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 16:51:42 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/03 23:19:57 by ichaabi          ###   ########.fr       */
+/*   Created: 2024/02/02 19:26:40 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/02/03 23:55:40 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-int	duplicate(char **dupp)
+void	free_memory(char **args)
 {
-	int		i;
-	int		j;
+	int	i;
 
 	i = 0;
-	while (i < length2d(dupp) - 1)
+	if (!args)
+		return ;
+	while (args[i])
 	{
-		j = i + 1;
-		while (dupp[j])
-		{
-			if (ft_atoi(dupp[i]) == ft_atoi(dupp[j]))
-				return (1);
-			j++;
-		}
+		free(args[i]);
 		i++;
 	}
-	return (0);
+	free (args);
 }

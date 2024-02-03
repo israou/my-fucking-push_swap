@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_duplicate.c                                :+:      :+:    :+:   */
+/*   reverse_4checker.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 16:51:42 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/03 23:19:57 by ichaabi          ###   ########.fr       */
+/*   Created: 2024/02/04 00:03:05 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/02/04 00:07:48 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-int	duplicate(char **dupp)
+void	ft_reverse_rotate(t_robio **a)
 {
-	int		i;
-	int		j;
+	t_robio	*tmp;
+	t_robio	*tmp1;
 
-	i = 0;
-	while (i < length2d(dupp) - 1)
-	{
-		j = i + 1;
-		while (dupp[j])
-		{
-			if (ft_atoi(dupp[i]) == ft_atoi(dupp[j]))
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	if (!a || !*a || !(*a)->next)
+		return ;
+	tmp = ft_lstlast(*a);
+	tmp1 = *a;
+	while (tmp1->next->next)
+		tmp1 = tmp1->next;
+	tmp1->next = NULL;
+	ft_lstadd_front(a, tmp);
+	indexmystack(a);
+}
+
+void	ft_rrr(t_robio **a, t_robio **b)
+{
+	ft_reverse_rotate(a);
+	ft_reverse_rotate(b);
 }

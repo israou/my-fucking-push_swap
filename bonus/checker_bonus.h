@@ -6,15 +6,15 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:02:09 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/28 22:47:06 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/03 23:15:04 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_BONUS_H
-#define CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
 # ifndef BUFFER_SIZE
-#define BUFFER_SIZE 20
+#  define BUFFER_SIZE 20
 # endif
 
 # include <unistd.h>
@@ -26,11 +26,11 @@
 
 typedef struct s_robio
 {
-	int content;
-	int index;
-	int move;
-	struct s_robio *next;
-}t_robio;
+	int				content;
+	int				index;
+	int				move;
+	struct s_robio	*next;
+}	t_robio;
 
 t_robio	*ft_lstnew(int content);
 t_robio	*ft_lstlast(t_robio *lst);
@@ -69,4 +69,10 @@ void	ft_check(int ac, char **av, t_robio **a);
 int		check_sort(t_robio *a);
 char	*ft_strjoin(char **arg, char *del, int size);
 int		duplicate(char **dupp);
+void	ft_lstclear(t_robio **lst);
+char	**pars_one(int ac, char **av);
+void	ft_check(int ac, char **av, t_robio **a);
+int		length2d(char **splitted_args);
+void	free_memory(char **args);
+void	ft_linkedclear(t_robio **lst);
 #endif

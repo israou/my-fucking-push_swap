@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:37:59 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/01/28 21:17:58 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/03 23:58:37 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,9 @@ char	*join4gnl(char const *stash, char const *buf)
 	i = 0;
 	j = 0;
 	if (stash == NULL)
-		return (ft_strdup((char *)buf)); //STASH FLWL KIJI NULL NREJEE LCONTENU D buf F STASH, bash ihet dakshy dial buf f stash
-	line = (char *)malloc (sizeof(char) * (ft_strlen(stash) + ft_strlen(buf) + 1));
+		return (ft_strdup((char *)buf));
+	line = (char *)malloc (sizeof(char) * (ft_strlen(stash) + \
+			ft_strlen(buf) + 1));
 	if (!line)
 		return (0);
 	while (stash[i])
@@ -79,7 +80,7 @@ char	*join4gnl(char const *stash, char const *buf)
 		j++;
 	}
 	line[i + j] = '\0';
-	free((char *) stash); //STASH LMERA TANYA M ALLOKER W KHASNNI NHET FIH DATA JDIDA NFREEYER STASH LQDIM
+	free((char *) stash);
 	return (line);
 }
 

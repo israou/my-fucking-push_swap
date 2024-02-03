@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_duplicate.c                                :+:      :+:    :+:   */
+/*   free_4checkerlinkedlist.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 16:51:42 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/03 23:19:57 by ichaabi          ###   ########.fr       */
+/*   Created: 2024/02/02 19:02:37 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/02/03 23:55:49 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-int	duplicate(char **dupp)
+void	ft_linkedclear(t_robio **lst)
 {
-	int		i;
-	int		j;
+	t_robio	*node;
 
-	i = 0;
-	while (i < length2d(dupp) - 1)
+	if (!lst)
+		return ;
+	node = (*lst);
+	while (*lst)
 	{
-		j = i + 1;
-		while (dupp[j])
-		{
-			if (ft_atoi(dupp[i]) == ft_atoi(dupp[j]))
-				return (1);
-			j++;
-		}
-		i++;
+		node = (*lst)->next;
+		free(*lst);
+		*lst = node;
 	}
-	return (0);
+	lst = NULL;
 }

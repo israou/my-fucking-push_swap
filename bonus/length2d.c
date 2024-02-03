@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_duplicate.c                                :+:      :+:    :+:   */
+/*   length2d.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 16:51:42 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/03 23:19:57 by ichaabi          ###   ########.fr       */
+/*   Created: 2024/02/04 00:08:17 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/02/04 00:08:46 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-int	duplicate(char **dupp)
+int	length2d(char **splitted_args)
 {
-	int		i;
-	int		j;
+	int	i;
 
 	i = 0;
-	while (i < length2d(dupp) - 1)
-	{
-		j = i + 1;
-		while (dupp[j])
-		{
-			if (ft_atoi(dupp[i]) == ft_atoi(dupp[j]))
-				return (1);
-			j++;
-		}
+	if (!splitted_args)
+		return (1);
+	while (splitted_args[i])
 		i++;
-	}
-	return (0);
+	return (i);
 }

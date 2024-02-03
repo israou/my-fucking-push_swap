@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_duplicate.c                                :+:      :+:    :+:   */
+/*   push_4checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 16:51:42 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/03 23:19:57 by ichaabi          ###   ########.fr       */
+/*   Created: 2024/02/04 00:01:09 by ichaabi           #+#    #+#             */
+/*   Updated: 2024/02/04 00:01:44 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-int	duplicate(char **dupp)
+void	push_b(t_robio **a, t_robio **b)
 {
-	int		i;
-	int		j;
+	t_robio	*tmp;
 
-	i = 0;
-	while (i < length2d(dupp) - 1)
-	{
-		j = i + 1;
-		while (dupp[j])
-		{
-			if (ft_atoi(dupp[i]) == ft_atoi(dupp[j]))
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	if (!*a)
+		return ;
+	tmp = (*a);
+	(*a) = (*a)->next;
+	tmp->next = (*b);
+	(*b) = tmp;
+	indexmystack(a);
+	indexmystack(b);
+}
+
+void	push_a(t_robio **b, t_robio **a)
+{
+	t_robio	*tmp;
+
+	if (!*b)
+		return ;
+	tmp = (*b);
+	(*b) = (*b)->next;
+	tmp->next = (*a);
+	(*a) = tmp;
+	indexmystack(a);
+	indexmystack(b);
 }
