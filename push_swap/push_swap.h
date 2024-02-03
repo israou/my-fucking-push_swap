@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:10:20 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/03 23:14:36 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/04 00:18:24 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int		get_min_move(t_robio *b, t_robio *top, int size_a, int size_b);
 void	step_by_step(t_robio **a, t_robio **b, int size);
 t_robio	*max_element(t_robio **a);
 t_robio	*min_element(t_robio **a);
-void	aff(t_robio *stack_a, t_robio *stack_b, int size);
 int		ft_max(int x, int y);
 void	two_up(t_robio **a, t_robio **b, t_robio *top_a, t_robio *best);
 void	two_down(t_robio **a, t_robio **b, t_robio *top_a, t_robio *best);

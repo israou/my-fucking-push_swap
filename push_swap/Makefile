@@ -6,7 +6,7 @@
 #    By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 16:58:42 by ichaabi           #+#    #+#              #
-#    Updated: 2024/02/04 00:09:59 by ichaabi          ###   ########.fr        #
+#    Updated: 2024/02/04 00:17:43 by ichaabi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRC = 	affichage.c \
-		atoi.c \
+SRC =	atoi.c \
 		bigsort.c \
 		compare_put.c \
 		duplicate.c \

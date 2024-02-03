@@ -6,7 +6,7 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 23:42:31 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/03 23:38:39 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/02/04 00:18:14 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,6 @@ int	main(int ac, char **av)
 	if (ac <= 1)
 		return (0);
 	ft_parsingcheck(ac, av, &head_a);
-	aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
 	check_sort(&head_a);
 	if (ft_lstsize(head_a) == 3)
 		sorting_three(&head_a);
@@ -114,7 +113,6 @@ int	main(int ac, char **av)
 		sorting_five(&head_a, &head_b);
 	else
 		step_by_step(&head_a, &head_b, ft_lstsize(head_a));
-	aff(head_a, head_b, ft_max(ft_lstsize(head_a), ft_lstsize(head_b)));
 	ft_lstclear(&head_a);
 	ft_lstclear(&head_b);
 	return (0);
