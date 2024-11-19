@@ -6,12 +6,14 @@
 /*   By: ichaabi <ichaabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:02:09 by ichaabi           #+#    #+#             */
-/*   Updated: 2024/02/03 23:15:04 by ichaabi          ###   ########.fr       */
+/*   Updated: 2024/11/19 03:36:00 by ichaabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
+
+
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 20
